@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::post('/send', 'emailController@sendmail1');
+
+Route::post('/sendtogct', 'emailController@sendmailtogct');

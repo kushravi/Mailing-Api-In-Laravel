@@ -21,4 +21,17 @@ class emailController extends Controller
       return response("Sent Successfully");
     }
 
+
+    public function sendmailtogct(Request $request)
+    {
+        $data = array('name'=> $request->input('name'),'email'=>  $request->input('email'),'msg'=> $request->input('msg'));
+        Mail::send('send', $data, function($message)  use ($data)
+        {
+         $message->to('gctrust443@gmail.com')->subject
+            ('Query');
+         $message->from('sarvodayayouthfoundation@gmail.com','support');
+        });
+      return response("Sent Successfully");
+    }
+
 }
